@@ -13,4 +13,28 @@ public class RaceTest extends student.TestCase{
     public void setUp() {
         
     }
+    
+    
+    /**
+     * Tests the getCases method
+     */
+    public void testGetCases() {
+        
+    }
+    
+    
+    /**
+     * Tests the getDeaths method
+     */
+    public void testGetDeaths() {
+        
+    }
+    
+    
+    /**
+     * Tests the getCFR method
+     */
+    public void testGetCFR() {
+        
+    }
 }
