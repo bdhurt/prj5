@@ -19,7 +19,7 @@ public class LinkedListTest extends student.TestCase{
         list1 = new LinkedList<String>();
         list2 = new LinkedList<String>();
 
-        list1.add"red");
+        list1.add("red");
 
         list2.add("red");
         list2.add("orange");

@@ -1,10 +1,6 @@
 package prj5;
 
-import linkedlist.LList;
-import linkedlist.SinglyLinkedList;
-import linkedlist.SinglyLinkedList.Node;
-
-public class LinkedList<E> implements LList<E> {
+public class LinkedList<E>{
 
     /**
      * This represents a node in a singly linked list. This node stores data
@@ -84,7 +80,7 @@ public class LinkedList<E> implements LList<E> {
     /**
      * Creates a new LinkedList object
      */
-    public SinglyLinkedList() {
+    public LinkedList() {
         head = null;
         size = 0;
 
@@ -96,7 +92,6 @@ public class LinkedList<E> implements LList<E> {
      *
      * @return the number of elements
      */
-    @Override
     public int size() {
         return size;
     }
@@ -115,7 +110,6 @@ public class LinkedList<E> implements LList<E> {
      * @throws IllegalArgumentException
      *             if obj is null
      */
-    @Override
     public void add(int index, E obj) {
         // check if the object is null
         if (obj == null) {
@@ -169,7 +163,6 @@ public class LinkedList<E> implements LList<E> {
      * @throws IllegalArgumentException
      *             if obj is null
      */
-    @Override
     public void add(E obj) {
         // check if the object is null
         if (obj == null) {
@@ -199,7 +192,6 @@ public class LinkedList<E> implements LList<E> {
      *
      * @return true if the array is empty
      */
-    @Override
     public boolean isEmpty() {
         return (size == 0);
     }
@@ -212,7 +204,6 @@ public class LinkedList<E> implements LList<E> {
      *            the object to remove
      * @return true if successful
      */
-    @Override
     public boolean remove(E obj) {
         Node<E> current = head;
 
@@ -252,7 +243,6 @@ public class LinkedList<E> implements LList<E> {
      * @throws IndexOutOfBoundsException
      *             if there is not an element at the index
      */
-    @Override
     public boolean remove(int index) {
         // if the index is invalid
         if (index < 0 || head == null) {
@@ -300,7 +290,6 @@ public class LinkedList<E> implements LList<E> {
      * @throws IndexOutOfBoundsException
      *             if no node at the given index
      */
-    @Override
     public E get(int index) {
         Node<E> current = head;
         int currentIndex = 0;
@@ -329,8 +318,10 @@ public class LinkedList<E> implements LList<E> {
      *            the object to check for
      * @return true if it contains the object
      */
-    @Override
     public boolean contains(E obj) {
+        if(obj == null) {
+            return false;
+        }
         Node<E> current = head;
         while (current != null) {
             if (obj.equals(current.data)) {
@@ -346,7 +337,6 @@ public class LinkedList<E> implements LList<E> {
     /**
      * Removes all of the elements from the list
      */
-    @Override
     public void clear() {
         // make sure we don't call clear on an empty list
         if (head != null) {
@@ -365,8 +355,10 @@ public class LinkedList<E> implements LList<E> {
      *            the object to look for
      * @return the last position of it. -1 If it is not in the list
      */
-    @Override
     public int lastIndexOf(E obj) {
+        if(obj == null) {
+            return -1;
+        }
         int lastIndex = -1;
         Node<E> current = head;
         int currentIndex = 0;
@@ -445,7 +437,7 @@ public class LinkedList<E> implements LList<E> {
         }
         if (this.getClass() == obj.getClass()) {
             @SuppressWarnings("unchecked")
-            SinglyLinkedList<E> other = ((SinglyLinkedList<E>)obj);
+            LinkedList<E> other = ((LinkedList<E>)obj);
             if (other.size() == this.size()) {
                 Node<E> current = head;
                 Node<E> otherCurrent = other.head;
