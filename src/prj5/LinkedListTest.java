@@ -11,7 +11,7 @@ public class LinkedListTest extends student.TestCase{
      * Sets up the test class
      */
     public void setUp() {
-        
+        //Test
     }
 
 }
