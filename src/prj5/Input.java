@@ -13,7 +13,7 @@ public class Input {
     /**
      * Main method for the project runner
      * 
-     * @param args haha
+     * @param args
      *            optional input values
      */
     public static void main(String[] args) {
