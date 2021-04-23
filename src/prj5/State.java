@@ -101,7 +101,19 @@ public class State {
      * @return sorted array
      */
     public Race[] sortCFR() {
-        return null;
+        Race tempRace;
+        for (int i = 0; i < races.length; i++) 
+        {
+            for (int j = i + 1; j < races.length; j++) { 
+                if (races[i].getCFR() < races[j].getCFR()) 
+                {
+                    tempRace = races[i];
+                    races[i] = races[j];
+                    races[j] = tempRace;
+                }
+            }
+        }
+        return races;
     }
 
 }

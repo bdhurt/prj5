@@ -92,6 +92,12 @@ public class StateTest extends student.TestCase {
      * Tests the sortCFR method
      */
     public void testSortCFR() {
+        Race[] sorted = georgia.sortCFR();
+        assertEquals(testOther.getCFR(), sorted[0].getCFR(), 0.1);
+        assertEquals(testLatinx.getCFR(), sorted[1].getCFR(), 0.1);
+        assertEquals(testWhite.getCFR(), sorted[2].getCFR(), 0.1);
+        assertEquals(testBlack.getCFR(), sorted[3].getCFR(), 0.1);
+        assertEquals(testAsian.getCFR(), sorted[4].getCFR(), 0.1);
 
     }
 }
