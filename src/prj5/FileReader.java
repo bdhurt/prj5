@@ -40,6 +40,7 @@ public class FileReader {
         FileNotFoundException {
         // Scanner parses through file contents
         Scanner scanner = new Scanner(new File(fileName));
+        scanner.nextLine();
         LinkedList<State> states = new LinkedList<State>();
         int x = 0;
         // While there are still lines left to be scanned

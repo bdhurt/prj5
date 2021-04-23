@@ -1,5 +1,7 @@
 package prj5;
 
+import java.text.DecimalFormat;
+
 /**
  * Race class, contains information for a specific race's cases and deaths
  * 
@@ -64,5 +66,18 @@ public class Race {
      */
     public String getName() {
         return name;
+    }
+    
+    
+    
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("");
+        builder.append(name + ": ");
+        builder.append(cases + " cases, ");
+        DecimalFormat df = new DecimalFormat("###.#");
+        String cfrFormatted = df.format(this.getCFR());
+        builder.append(cfrFormatted + "% CFR");
+        return builder.toString();
     }
 }

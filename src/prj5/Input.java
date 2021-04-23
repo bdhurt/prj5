@@ -18,6 +18,6 @@ public class Input {
      *            optional input values
      */
     public static void main(String[] args) {
-
+        
     }
 }

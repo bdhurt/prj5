@@ -45,4 +45,12 @@ public class RaceTest extends student.TestCase{
     public void testGetName() {
         assertEquals("Asian", r1.getName());
     }
+    
+    
+    /**
+     * Tests the toString method
+     */
+    public void testToString() {
+        assertEquals("Asian: 1000 cases, 2.3% CFR", r1.toString());
+    }
 }
