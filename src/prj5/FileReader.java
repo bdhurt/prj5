@@ -38,21 +38,29 @@ public class FileReader {
     private LinkedList<State> readFile(String fileName)
         throws ParseException,
         FileNotFoundException {
-        // parses through file contents
+        // Scanner parses through file contents
         Scanner scanner = new Scanner(new File(fileName));
         LinkedList<State> states = new LinkedList<State>();
         int x = 0;
-        // while there are still lines left to be scanned
+        // While there are still lines left to be scanned
         while (scanner.hasNextLine() && x <= 5) {
             String string = scanner.nextLine();
             String[] strArr = string.split(", *");
-            // if file is incorrectly formatted
+            // Throw error if file is incorrectly formatted
             if (strArr.length != 11) {
                 scanner.close();
                 throw new ParseException("Input file is not correct in format",
                     -1);
             }
+            // First value in input file is the name of the state
             String stateName = strArr[0];
+            // If NA, set to -1
+            for(int i = 1; i < strArr.length; i++) {
+                if(strArr[i].equals("NA")) {
+                    strArr[i] = "-1";
+                }
+            }
+            // Take data for cases and deaths into integers
             int whiteCases = Integer.valueOf(strArr[1]);
             int whiteDeaths = Integer.valueOf(strArr[6]);
             int blackCases = Integer.valueOf(strArr[2]);
@@ -63,6 +71,7 @@ public class FileReader {
             int asianDeaths = Integer.valueOf(strArr[9]);
             int otherCases = Integer.valueOf(strArr[5]);
             int otherDeaths = Integer.valueOf(strArr[10]);
+            // Create each race
             Race white = new Race("white", whiteCases, whiteDeaths);
             Race black = new Race("black", blackCases, blackDeaths);
             Race latinx = new Race("latinx", latinxCases, latinxDeaths);
