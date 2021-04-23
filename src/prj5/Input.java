@@ -1,5 +1,8 @@
 package prj5;
 
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+
 /**
  * Reads input
  * 
@@ -16,8 +19,16 @@ public class Input {
      * 
      * @param args
      *            optional input values
+     * @throws ParseException 
+     * @throws FileNotFoundException 
      */
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) 
+        throws FileNotFoundException, ParseException {
+        if (args.length == 1) {
+            FileReader runner = new FileReader(args[0]);
+        }
+        else {
+            FileReader runner = new FileReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+        }
     }
 }
