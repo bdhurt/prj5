@@ -382,17 +382,16 @@ public class LinkedList<E>{
      */
     @Override
     public String toString() {
-        String result = "{";
+        String result = "";
 
         Node<E> current = head;
         while (current != null) {
-            result += "" + current.data;
+            result += "" + current.data + "\n";
             current = current.next;
             if (current != null) {
                 result += ", ";
             }
         }
-        result += "}";
         return result;
     }
 

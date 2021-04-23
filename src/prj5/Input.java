@@ -24,12 +24,14 @@ public class Input {
      */
     public static void main(String[] args) 
         throws FileNotFoundException, ParseException {
+        FileReader runner;
         if (args.length == 1) {
-            FileReader runner = new FileReader(args[0]);
+            runner = new FileReader(args[0]);
         }
         else {
-            FileReader runner = new FileReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+            runner = new FileReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
         }
-        
+        LinkedList<State> states = runner.getStates();
+        System.out.print(states.toString());
     }
 }
