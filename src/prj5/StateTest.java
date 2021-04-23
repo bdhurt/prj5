@@ -89,12 +89,4 @@ public class StateTest extends student.TestCase {
     public void testSortCFR() {
 
     }
-
-
-    /**
-     * Tests the getName method
-     */
-    public void testGetName() {
-
-    }
 }
