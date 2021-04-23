@@ -42,6 +42,23 @@ public class State {
     }
 
 
+    /**
+     * Returns the name of the state object
+     * 
+     * @return string representing the name of the state
+     */
+    public String getName() {
+        return name;
+    }
+
+
+    /**
+     * Returns the race object corresponding to the race name
+     * 
+     * @param r
+     *            name of race we are looking for
+     * @return race object we are looking for
+     */
     public Race getRace(RaceEnum r) {
         Race[] tempList;
         State tempState;
