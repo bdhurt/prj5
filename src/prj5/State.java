@@ -82,7 +82,7 @@ public class State implements Comparable<Race> {
         for (int i = 0; i < races.length; i++) 
         {
             for (int j = i + 1; j < races.length; j++) { 
-                if (races[i].getName().compareTo(races[j].getName()) < 0) 
+                if (races[i].getName().compareTo(races[j].getName()) > 0) 
                 {
                     tempRace = races[i];
                     races[i] = races[j];
