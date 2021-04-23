@@ -57,4 +57,12 @@ public class Race {
         cfr = cfr / cases;
         return cfr;
     }
+    /**
+     * Retrieves the name for this race
+     * 
+     * @return String name of state
+     */
+    public String getName() {
+        return name;
+    }
 }

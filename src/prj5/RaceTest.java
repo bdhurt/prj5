@@ -12,7 +12,7 @@ public class RaceTest extends student.TestCase{
      * Sets up the test class
      */
     public void setUp() {
-        r1 = new Race(1000, 23);
+        r1 = new Race("Asian", 1000, 23);
     }
     
     
@@ -37,5 +37,12 @@ public class RaceTest extends student.TestCase{
      */
     public void testGetCFR() {
         assertEquals(2.3, r1.getCFR(), .01);
+    }
+    
+    /**
+     * Tests the getName method
+     */
+    public void testGetName() {
+        assertEquals("Asian", r1.getName());
     }
 }
