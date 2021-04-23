@@ -32,14 +32,10 @@ public class FileReader {
      * @throws FileNotFoundException
      *             If file cannot be found
      */
-    public ColonyReader(String applicantFileName, String planetFileName)
+    public FileReader(String fileName)
         throws FileNotFoundException,
-        SpaceColonyDataException,
         ParseException {
-        this.queue = readQueueFile(applicantFileName);
-        this.planets = readPlanetFile(planetFileName);
-        ColonyCalculator calculator = new ColonyCalculator(queue, planets);
-        SpaceWindow window = new SpaceWindow(calculator);
+        this.states = readFile(fileName);
     }
 
 
@@ -57,34 +53,26 @@ public class FileReader {
      * @throws FileNotFoundException
      *             If file cannot be found
      */
-    private Planet[] readPlanetFile(String fileName)
+    private LinkedList<State> readFile(String fileName)
         throws FileNotFoundException,
-        ParseException,
-        SpaceColonyDataException {
-        // planet array created from file contents
-        Planet[] tempPlanet = new Planet[ColonyCalculator.NUM_PLANETS];
+        ParseException {
+        // Race array created from file contents
+        Race[] tempRace = new Race[5];
         // parses through file contents
         Scanner scanner = new Scanner(new File(fileName));
         int x = 0;
         // while there are still lines left to be scanned
-        while (scanner.hasNextLine() && x <= ColonyCalculator.NUM_PLANETS - 1) {
+        while (scanner.hasNextLine() && x <= 5) {
             String string = scanner.nextLine();
             String[] strArr = string.split(", *");
             // if file is incorrectly formatted
-            if (strArr.length != 5) {
+            if (strArr.length != 11) {
                 scanner.close();
                 throw new ParseException("Input file is not correct in format",
                     -1);
             }
-            // a planet's minimum skill values
-            int ag = Integer.parseInt(strArr[1]);
-            int med = Integer.parseInt(strArr[2]);
-            int tech = Integer.parseInt(strArr[3]);
-            // one or more of the skill values are invalid
-            if (!isInSkillRange(ag, med, tech)) {
-                scanner.close();
-                throw new SpaceColonyDataException("Skills are not met");
-            }
+            String stateName = strArr[0];
+            Race white = new Race("white", strArr[1], strArr[6]);
             // adds planet found from file to planets array
             tempPlanet[x] = new Planet(strArr[0], ag, med, tech, Integer
                 .parseInt(strArr[4]));

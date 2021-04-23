@@ -9,6 +9,7 @@ package prj5;
 public class Race {
     private int cases;
     private int deaths;
+    private String name;
     private double cfr;
 
     /**
@@ -19,9 +20,10 @@ public class Race {
      * @param deathNumber
      *            the number of deaths for this race
      */
-    public Race(int caseNumber, int deathNumber) {
+    public Race(String raceName, int caseNumber, int deathNumber) {
         cases = caseNumber;
         deaths = deathNumber;
+        name = raceName;
     }
 
 
