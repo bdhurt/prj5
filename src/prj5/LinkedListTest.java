@@ -78,18 +78,18 @@ public class LinkedListTest extends student.TestCase{
         emptyList.add(0, "red");
         assertEquals("red", emptyList.get(0));
         emptyList.add(1, "orange");
-        assertEquals("{red, orange}", emptyList.toString());
+        assertEquals("red\n, orange\n", emptyList.toString());
 
         list1.add(0, "green");
-        assertEquals("{green, red}", list1.toString());
+        assertEquals("green\n, red\n", list1.toString());
 
         list2.add(0, "black");
-        assertEquals("{black, red, orange, yellow}", list2.toString());
+        assertEquals("black\n, red\n, orange\n, yellow\n", list2.toString());
         list2.add(2, "white");
-        assertEquals("{black, red, white, orange, yellow}", list2.toString());
+        assertEquals("black\n, red\n, white\n, orange\n, yellow\n", list2.toString());
         list2.add(5, "green");
         String temp;
-        temp = "{black, red, white, orange, yellow, green}";
+        temp = "black\n, red\n, white\n, orange\n, yellow\n, green\n";
         assertEquals(temp, list2.toString());
     }
 
@@ -189,9 +189,9 @@ public class LinkedListTest extends student.TestCase{
 
         list2.add("green");
         assertTrue(list2.remove(3));
-        assertEquals("{red, orange, yellow}", list2.toString());
+        assertEquals("red\n, orange\n, yellow\n", list2.toString());
         assertTrue(list2.remove(0));
-        assertEquals("{orange, yellow}", list2.toString());
+        assertEquals("orange\n, yellow\n", list2.toString());
     }
 
 
@@ -333,10 +333,10 @@ public class LinkedListTest extends student.TestCase{
      * Tests the toString method
      */
     public void testToString() {
-        assertEquals("{}", emptyList.toString());
+        assertEquals("", emptyList.toString());
 
-        assertEquals("{red}", list1.toString());
+        assertEquals("red\n", list1.toString());
 
-        assertEquals("{red, orange, yellow}", list2.toString());
+        assertEquals("red\n, orange\n, yellow\n", list2.toString());
     }
 }
