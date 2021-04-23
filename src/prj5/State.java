@@ -79,11 +79,9 @@ public class State {
      */
     public Race[] sortAlpha() {
         Race tempRace;
-        for (int i = 0; i < races.length; i++) 
-        {
-            for (int j = i + 1; j < races.length; j++) { 
-                if (races[i].getName().compareTo(races[j].getName()) > 0) 
-                {
+        for (int i = 0; i < races.length; i++) {
+            for (int j = i + 1; j < races.length; j++) {
+                if (races[i].getName().compareTo(races[j].getName()) > 0) {
                     tempRace = races[i];
                     races[i] = races[j];
                     races[j] = tempRace;
@@ -102,11 +100,9 @@ public class State {
      */
     public Race[] sortCFR() {
         Race tempRace;
-        for (int i = 0; i < races.length; i++) 
-        {
-            for (int j = i + 1; j < races.length; j++) { 
-                if (races[i].getCFR() < races[j].getCFR()) 
-                {
+        for (int i = 0; i < races.length; i++) {
+            for (int j = i + 1; j < races.length; j++) {
+                if (races[i].getCFR() < races[j].getCFR()) {
                     tempRace = races[i];
                     races[i] = races[j];
                     races[j] = tempRace;
@@ -114,6 +110,34 @@ public class State {
             }
         }
         return races;
+    }
+
+
+    /**
+     * 
+     * 
+     * @return State in a string format
+     */
+    public String toString() {
+        Race[] byAlpha = this.sortAlpha();
+        Race[] byCFR = this.sortCFR();
+
+        StringBuilder s = new StringBuilder();
+        s.append(this.getName());
+        s.append("\n");
+        for (int i = 0; i < byAlpha.length;i++) {
+            s.append(byAlpha[i].toString());
+        }
+        s.append("\n");
+        s.append("=====");
+        s.append("\n");
+        for (int i = 0; i < byCFR.length;i++) {
+            s.append(byCFR[i].toString());
+        }
+        s.append("\n");
+        s.append("=====");
+        return s.toString();
+
     }
 
 }
