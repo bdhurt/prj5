@@ -127,14 +127,14 @@ public class State {
         s.append("\n");
         for (int i = 0; i < byAlpha.length;i++) {
             s.append(byAlpha[i].toString());
+            s.append("\n");
         }
-        s.append("\n");
         s.append("=====");
         s.append("\n");
         for (int i = 0; i < byCFR.length;i++) {
             s.append(byCFR[i].toString());
+            s.append("\n");
         }
-        s.append("\n");
         s.append("=====");
         return s.toString();
 

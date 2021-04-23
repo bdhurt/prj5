@@ -51,6 +51,22 @@ public class StateTest extends student.TestCase {
         georgia = new State("Georgia", testWhite, testBlack, testLatinx,
             testAsian, testOther);
 
+        System.out.println(testWhite.getCases());
+        System.out.println(testWhite.getCFR());
+        
+        System.out.println(testBlack.getCases());
+        System.out.println(testBlack.getCFR());
+        
+        System.out.println(testLatinx.getCases());
+        System.out.println(testLatinx.getCFR());
+        
+        System.out.println(testAsian.getCases());
+        System.out.println(testAsian.getCFR());
+        
+        System.out.println(testOther.getCases());
+        System.out.println(testOther.getCFR());
+        
+        
     }
   
 
@@ -99,5 +115,23 @@ public class StateTest extends student.TestCase {
         assertEquals(testBlack.getCFR(), sorted[3].getCFR(), 0.1);
         assertEquals(testAsian.getCFR(), sorted[4].getCFR(), 0.1);
 
+    }
+    
+    /**
+     * Tests the toString method
+     */
+    public void testToString() {
+        assertEquals("Georgia\n" + "asian: 422 cases, 1.4% CFR\n" 
+            + "black: 150 cases, 6.7% CFR\n"
+            + "latinx: 240 cases, 12.5% CFR\n"
+            + "other: 80 cases, 20% CFR\n"
+            + "white: 100 cases, 8% CFR\n"
+            + "=====\n"
+            + "other: 80 cases, 20% CFR\n"
+            + "latinx: 240 cases, 12.5% CFR\n"
+            + "white: 100 cases, 8% CFR\n"
+            + "black: 150 cases, 6.7% CFR\n"
+            + "asian: 422 cases, 1.4% CFR\n"
+            + "=====",georgia.toString());
     }
 }
