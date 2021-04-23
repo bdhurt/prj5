@@ -6,7 +6,7 @@ package prj5;
  * @author benjaminhurt
  *
  */
-public class State implements Comparable<Race> {
+public class State {
     private Race[] races;
     private String name;
 
@@ -102,13 +102,6 @@ public class State implements Comparable<Race> {
      */
     public Race[] sortCFR() {
         return null;
-    }
-
-
-    @Override
-    public int compareTo(Race o) {
-        // TODO Auto-generated method stub
-        return 0;
     }
 
 }
