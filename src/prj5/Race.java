@@ -55,6 +55,9 @@ public class Race {
      * @return cfr double
      */
     public double getCFR() {
+        if(deaths == -1.0 || cases == -1.0) {
+            return -1.0;
+        }
         cfr = deaths * 100;
         cfr = cfr / cases;
         return cfr;
