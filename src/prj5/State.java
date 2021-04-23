@@ -6,7 +6,7 @@ package prj5;
  * @author benjaminhurt
  *
  */
-public class State {
+public class State implements Comparable<Race> {
     private Race[] races;
     private String name;
 
@@ -78,7 +78,19 @@ public class State {
      * @return alphabetized array
      */
     public Race[] sortAlpha() {
-        return null;
+        Race tempRace;
+        for (int i = 0; i < races.length; i++) 
+        {
+            for (int j = i + 1; j < races.length; j++) { 
+                if (races[i].getName().compareTo(races[j].getName()) < 0) 
+                {
+                    tempRace = races[i];
+                    races[i] = races[j];
+                    races[j] = tempRace;
+                }
+            }
+        }
+        return races;
     }
 
 
@@ -90,6 +102,13 @@ public class State {
      */
     public Race[] sortCFR() {
         return null;
+    }
+
+
+    @Override
+    public int compareTo(Race o) {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
 }
