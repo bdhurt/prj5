@@ -79,6 +79,12 @@ public class StateTest extends student.TestCase {
      * Tests the sortAlpha method
      */
     public void testSortAlpha() {
+        Race[] testSorted = new Race[5];
+        testSorted[0] = testAsian;
+        testSorted[1] = testBlack;
+        testSorted[2] = testLatinx;
+        testSorted[3] = testOther;
+        testSorted[4] = testWhite;
 
     }
 
