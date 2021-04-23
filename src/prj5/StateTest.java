@@ -52,7 +52,7 @@ public class StateTest extends student.TestCase {
             testAsian, testOther);
 
     }
-
+  
 
     /**
      * Tests the getName method
