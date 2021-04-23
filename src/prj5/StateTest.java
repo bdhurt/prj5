@@ -44,8 +44,8 @@ public class StateTest extends student.TestCase {
     public void setUp() {
         testWhite = new Race("white", 100, 8);
         testBlack = new Race("black", 150, 10);
-        testLatinx = new Race("Latinx", 240, 30);
-        testAsian = new Race("Asian", 422, 6);
+        testLatinx = new Race("latinx", 240, 30);
+        testAsian = new Race("asian", 422, 6);
         testOther = new Race("other", 80, 16);
 
         georgia = new State("Georgia", testWhite, testBlack, testLatinx,
