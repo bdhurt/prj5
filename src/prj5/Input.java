@@ -30,5 +30,6 @@ public class Input {
         else {
             FileReader runner = new FileReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
         }
+        
     }
 }
