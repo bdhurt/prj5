@@ -66,11 +66,11 @@ public class StateTest extends student.TestCase {
      * Tests the getRace method
      */
     public void testGetRace() {
-        assertEquals(100, georgia.getRace("white").getCases());
-        assertEquals(150, georgia.getRace("black").getCases());
-        assertEquals(240, georgia.getRace("latinx").getCases());
-        assertEquals(422, georgia.getRace("asian").getCases());
-        assertEquals(80, georgia.getRace("other").getCases());
+        assertEquals(testWhite, georgia.getRace("white"));
+        assertEquals(testBlack, georgia.getRace("black"));
+        assertEquals(testLatinx, georgia.getRace("latinx"));
+        assertEquals(testAsian, georgia.getRace("asian"));
+        assertEquals(testOther, georgia.getRace("other"));
 
     }
 
