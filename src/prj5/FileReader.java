@@ -59,7 +59,7 @@ public class FileReader {
             // If NA, set to -1
             for(int i = 1; i < strArr.length; i++) {
                 if(strArr[i].equals("NA")) {
-                    strArr[i] = "-1.0";
+                    strArr[i] = "-1";
                 }
             }
             // Take data for cases and deaths into integers
