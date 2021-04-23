@@ -59,22 +59,22 @@ public class State {
      *            name of race we are looking for
      * @return race object we are looking for
      */
-    public Race getRace(RaceEnum r) {
+    public Race getRace(String r) {
         Race[] tempList;
         State tempState;
         tempState = this;
         tempList = tempState.sortAlpha();
 
         switch (r) {
-            case ASIAN:
+            case "asian":
                 return tempList[0];
-            case BLACK:
+            case "black":
                 return tempList[1];
-            case LATINX:
+            case "latinx":
                 return tempList[2];
-            case OTHER:
+            case "other":
                 return tempList[3];
-            case WHITE:
+            case "white":
                 return tempList[4];
             default:
                 return null;
