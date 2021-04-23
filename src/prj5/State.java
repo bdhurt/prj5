@@ -79,16 +79,17 @@ public class State {
      */
     public Race[] sortAlpha() {
         Race tempRace;
-        for (int i = 0; i < races.length; i++) {
-            for (int j = i + 1; j < races.length; j++) {
-                if (races[i].getName().compareTo(races[j].getName()) > 0) {
-                    tempRace = races[i];
-                    races[i] = races[j];
-                    races[j] = tempRace;
+        Race[] sortedRace = races;
+        for (int i = 0; i < sortedRace.length; i++) {
+            for (int j = i + 1; j < sortedRace.length; j++) {
+                if (sortedRace[i].getName().compareTo(sortedRace[j].getName()) > 0) {
+                    tempRace = sortedRace[i];
+                    sortedRace[i] = sortedRace[j];
+                    sortedRace[j] = tempRace;
                 }
             }
         }
-        return races;
+        return sortedRace;
     }
 
 
@@ -100,16 +101,17 @@ public class State {
      */
     public Race[] sortCFR() {
         Race tempRace;
-        for (int i = 0; i < races.length; i++) {
-            for (int j = i + 1; j < races.length; j++) {
-                if (races[i].getCFR() < races[j].getCFR()) {
-                    tempRace = races[i];
-                    races[i] = races[j];
-                    races[j] = tempRace;
+        Race[] sortedRace = races;
+        for (int i = 0; i < sortedRace.length; i++) {
+            for (int j = i + 1; j < sortedRace.length; j++) {
+                if (sortedRace[i].getCFR() < sortedRace[j].getCFR()) {
+                    tempRace = sortedRace[i];
+                    sortedRace[i] = sortedRace[j];
+                    sortedRace[j] = tempRace;
                 }
             }
         }
-        return races;
+        return sortedRace;
     }
 
 
@@ -120,7 +122,6 @@ public class State {
      */
     public String toString() {
         Race[] byAlpha = this.sortAlpha();
-        Race[] byCFR = this.sortCFR();
 
         StringBuilder s = new StringBuilder();
         s.append(this.getName());
@@ -131,6 +132,8 @@ public class State {
         }
         s.append("=====");
         s.append("\n");
+        
+        Race[] byCFR = this.sortCFR();
         for (int i = 0; i < byCFR.length;i++) {
             s.append(byCFR[i].toString());
             s.append("\n");
