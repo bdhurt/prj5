@@ -39,7 +39,8 @@ public class FileReader {
         throws ParseException,
         FileNotFoundException {
         // Scanner parses through file contents
-        Scanner scanner = new Scanner(new File(fileName));
+        File fileScan = new File(fileName);
+        Scanner scanner = new Scanner(fileScan);
         scanner.nextLine();
         LinkedList<State> states = new LinkedList<State>();
         int x = 0;
