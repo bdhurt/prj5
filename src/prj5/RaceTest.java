@@ -7,12 +7,16 @@ package prj5;
  */
 public class RaceTest extends student.TestCase{
     private Race r1;
+    private Race r2;
+    private Race r3;
 
     /**
      * Sets up the test class
      */
     public void setUp() {
         r1 = new Race("Asian", 1000, 23);
+        r2 = new Race("White", -1, 20);
+        r3 = new Race("White", 25, -1);
     }
     
     
@@ -37,6 +41,8 @@ public class RaceTest extends student.TestCase{
      */
     public void testGetCFR() {
         assertEquals(2.3, r1.getCFR(), .01);
+        assertEquals(-1.0, r2.getCFR(), .01);
+        assertEquals(-1.0, r3.getCFR(), .01);
     }
     
     /**
