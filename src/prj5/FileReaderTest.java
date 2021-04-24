@@ -2,7 +2,6 @@ package prj5;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.text.ParseException;
 
 /**
  * Tests the FileReader class
@@ -15,7 +14,6 @@ import java.text.ParseException;
  */
 public class FileReaderTest extends student.TestCase {
     private FileReader reader;
-    private FileReader badReader;
 
     /**
      * Sets up the test class
@@ -38,23 +36,38 @@ public class FileReaderTest extends student.TestCase {
     }
 
 
+    /**
+     * Attempts to catch IOException
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     * @throws IOException
+     *             if file formatted incorrectly
+     */
     public void testIOException() throws FileNotFoundException, IOException {
         Exception exception = null;
         try {
-            badReader = new FileReader("wrong_cases_and_deaths.csv");
+            reader = new FileReader("wrong_cases_and_deaths.csv");
         }
         catch (Exception e) {
             exception = e;
         }
-        assertTrue("file has wrong format",
-            exception instanceof IOException);
+        assertTrue("file has wrong format", exception instanceof IOException);
     }
 
 
+    /**
+     * Attempts to catch FileNotFoundException
+     * 
+     * @throws FileNotFoundException
+     *             if file not found
+     * @throws IOException
+     *             if file formatted incorrectly
+     */
     public void testFileException() throws FileNotFoundException, IOException {
         Exception exception = null;
         try {
-            badReader = new FileReader("blah.csv");
+            reader = new FileReader("blah.csv");
         }
         catch (Exception e) {
             exception = e;
