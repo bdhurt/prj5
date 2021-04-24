@@ -4,6 +4,9 @@ package prj5;
  * Test class for the State class
  * 
  * @author benjaminhurt
+ * @author ayermas
+ * @author jaredo19
+ * @version 04.23.2021
  *
  */
 public class StateTest extends student.TestCase {
