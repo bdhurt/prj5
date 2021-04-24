@@ -35,7 +35,7 @@ public class FileReader {
      * @throws FileNotFoundException
      *             if the file cannot be found
      */
-    private LinkedList<State> readFile(String fileName)
+    public LinkedList<State> readFile(String fileName)
         throws ParseException,
         FileNotFoundException {
         // Scanner parses through file contents
