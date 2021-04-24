@@ -1,6 +1,7 @@
 package prj5;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 
 /**
@@ -14,47 +15,51 @@ import java.text.ParseException;
  */
 public class FileReaderTest extends student.TestCase {
     private FileReader reader;
+    private FileReader badReader;
 
     /**
      * Sets up the test class
+     * 
+     * @throws IOException
      */
-    public void setUp() throws FileNotFoundException, ParseException {
+    public void setUp() throws FileNotFoundException, IOException {
         reader = new FileReader("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
     }
-    
+
+
     /**
      * Attempts to read the file
+     * 
+     * @throws IOException
      */
-    public void testReadFile() throws FileNotFoundException, ParseException{
-        reader.readFile("Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+    public void testReadFile() throws FileNotFoundException, IOException {
+        assertNotNull(reader.readFile(
+            "Cases_and_Deaths_by_race_CRDT_Sep2020.csv"));
     }
-    
-    /**
-     * Ensures a ParseException is thrown when input file has bad format
-     */
-    public void parseExceptionCheck() throws FileNotFoundException, ParseException{
-        FileReader badReader = new FileReader("wrong_cases_and_deaths.csv");
+
+
+    public void testIOException() throws FileNotFoundException, IOException {
         Exception exception = null;
         try {
-            badReader.readFile("wrong_cases_and_deaths.csv");
+            badReader = new FileReader("wrong_cases_and_deaths.csv");
         }
         catch (Exception e) {
             exception = e;
         }
-        assertTrue("file is formatted incorrectly",
-            exception instanceof ParseException);
+        assertTrue("file has wrong format",
+            exception instanceof IOException);
     }
-    
-    public void exceptionCheck() throws FileNotFoundException, ParseException{
-        FileReader badReader = new FileReader("blah.csv");
+
+
+    public void testFileException() throws FileNotFoundException, IOException {
         Exception exception = null;
         try {
-            badReader.readFile("blah.csv");
+            badReader = new FileReader("blah.csv");
         }
         catch (Exception e) {
             exception = e;
         }
-        assertTrue("file is formatted incorrectly",
-            exception instanceof ParseException);
+        assertTrue("file not found",
+            exception instanceof FileNotFoundException);
     }
 }

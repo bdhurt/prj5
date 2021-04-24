@@ -2,8 +2,9 @@ package prj5;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.ParseException;
+import java.io.IOException;
 import java.util.Scanner;
+import student.testingsupport.annotations.Hint;
 
 public class FileReader {
     private LinkedList<State> states;
@@ -13,14 +14,13 @@ public class FileReader {
      * 
      * @param fileName
      *            name of the file being read
+     * @throws IOException, FileNotFoundException 
      * @throws ParseException
      *             if the file is in the wrong format
-     * @throws FileNotFoundException
-     *             if the file cannot be found
      */
     public FileReader(String fileName)
-        throws ParseException,
-        FileNotFoundException {
+        throws
+        IOException, FileNotFoundException {
         this.states = readFile(fileName);
     }
 
@@ -30,14 +30,13 @@ public class FileReader {
      * @param fileName
      *            name of the file being read
      * @return LinkedList of states
+     * @throws IOException 
      * @throws ParseException
      *             if the file is in the wrong format
-     * @throws FileNotFoundException
-     *             if the file cannot be found
      */
     public LinkedList<State> readFile(String fileName)
-        throws ParseException,
-        FileNotFoundException {
+        throws
+        IOException {
         // Scanner parses through file contents
         File fileScan = new File(fileName);
         Scanner scanner = new Scanner(fileScan);
@@ -51,8 +50,7 @@ public class FileReader {
             // Throw error if file is incorrectly formatted
             if (strArr.length != 11) {
                 scanner.close();
-                throw new ParseException("Input file is not correct in format",
-                    -1);
+                throw new java.io.IOException();
             }
             // First value in input file is the name of the state
             String stateName = strArr[0];
@@ -88,6 +86,7 @@ public class FileReader {
         scanner.close();
 
         return states;
+        
     }
 
 

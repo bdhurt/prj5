@@ -1,7 +1,7 @@
 package prj5;
 
 import java.io.FileNotFoundException;
-import java.text.ParseException;
+import java.io.IOException;
 
 /**
  * Reads input
@@ -23,7 +23,7 @@ public class Input {
      * @throws FileNotFoundException 
      */
     public static void main(String[] args) 
-        throws FileNotFoundException, ParseException {
+        throws FileNotFoundException, IOException {
         FileReader runner;
         if (args.length == 1) {
             runner = new FileReader(args[0]);
