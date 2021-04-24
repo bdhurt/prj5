@@ -6,6 +6,9 @@ import java.text.DecimalFormat;
  * Race class, contains information for a specific race's cases and deaths
  * 
  * @author benjaminhurt
+ * @author ayermas
+ * @author jaredo19
+ * @version 04.23.2021
  *
  */
 public class Race {

@@ -4,6 +4,9 @@ package prj5;
  * State class, contains data for five races and the state
  * 
  * @author benjaminhurt
+ * @author ayermas
+ * @author jaredo19
+ * @version 04.23.2021
  *
  */
 public class State {
@@ -82,7 +85,8 @@ public class State {
         Race[] sortedRace = races;
         for (int i = 0; i < sortedRace.length; i++) {
             for (int j = i + 1; j < sortedRace.length; j++) {
-                if (sortedRace[i].getName().compareTo(sortedRace[j].getName()) > 0) {
+                if (sortedRace[i].getName().compareTo(sortedRace[j]
+                    .getName()) > 0) {
                     tempRace = sortedRace[i];
                     sortedRace[i] = sortedRace[j];
                     sortedRace[j] = tempRace;
@@ -126,15 +130,15 @@ public class State {
         StringBuilder s = new StringBuilder();
         s.append(this.getName());
         s.append("\n");
-        for (int i = 0; i < byAlpha.length;i++) {
+        for (int i = 0; i < byAlpha.length; i++) {
             s.append(byAlpha[i].toString());
             s.append("\n");
         }
         s.append("=====");
         s.append("\n");
-        
+
         Race[] byCFR = this.sortCFR();
-        for (int i = 0; i < byCFR.length;i++) {
+        for (int i = 0; i < byCFR.length; i++) {
             s.append(byCFR[i].toString());
             s.append("\n");
         }

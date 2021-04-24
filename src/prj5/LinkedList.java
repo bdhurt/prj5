@@ -1,6 +1,17 @@
 package prj5;
 
-public class LinkedList<E>{
+/**
+ * LinkedList class
+ * 
+ * @author benjaminhurt
+ * @author ayermas
+ * @author jaredo19
+ * @version 04.23.2021
+ *
+ * @param <E>
+ *            object type
+ */
+public class LinkedList<E> {
 
     /**
      * This represents a node in a singly linked list. This node stores data
@@ -319,7 +330,7 @@ public class LinkedList<E>{
      * @return true if it contains the object
      */
     public boolean contains(E obj) {
-        if(obj == null) {
+        if (obj == null) {
             return false;
         }
         Node<E> current = head;
@@ -356,7 +367,7 @@ public class LinkedList<E>{
      * @return the last position of it. -1 If it is not in the list
      */
     public int lastIndexOf(E obj) {
-        if(obj == null) {
+        if (obj == null) {
             return -1;
         }
         int lastIndex = -1;
@@ -395,7 +406,7 @@ public class LinkedList<E>{
         return result;
     }
 
-
+    
     /**
      * Returns an array representation of the list If a list contains A, B, and
      * C, the following should be returned {A, B, C}, If a list
@@ -403,6 +414,7 @@ public class LinkedList<E>{
      *
      * @return an array representing the list
      */
+    /*
     public Object[] toArray() {
 
         Object[] array = new Object[this.size()];
@@ -417,6 +429,7 @@ public class LinkedList<E>{
 
         return array;
     }
+    */
 
 
     /**
@@ -426,6 +439,7 @@ public class LinkedList<E>{
      * @return a boolean of whether two lists have the same contents,
      *         item per item and in the same order
      */
+    /*
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
@@ -453,5 +467,6 @@ public class LinkedList<E>{
 
         return false;
     }
+    */
 
 }

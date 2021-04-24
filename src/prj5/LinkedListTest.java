@@ -2,10 +2,14 @@ package prj5;
 
 /**
  * Test class for the LinkedList class
+ * 
  * @author benjaminhurt
+ * @author ayermas
+ * @author jaredo19
+ * @version 04.23.2021
  *
  */
-public class LinkedListTest extends student.TestCase{
+public class LinkedListTest extends student.TestCase {
     private LinkedList<String> emptyList;
     private LinkedList<String> list1; // Starts with one item
     private LinkedList<String> list2; // Starts with three items
@@ -79,6 +83,8 @@ public class LinkedListTest extends student.TestCase{
         assertEquals("red", emptyList.get(0));
         emptyList.add(1, "orange");
         assertEquals("red\n, orange\n", emptyList.toString());
+        emptyList.add(0, "blue");
+        assertEquals("blue", emptyList.get(0));
 
         list1.add(0, "green");
         assertEquals("green\n, red\n", list1.toString());
@@ -86,7 +92,8 @@ public class LinkedListTest extends student.TestCase{
         list2.add(0, "black");
         assertEquals("black\n, red\n, orange\n, yellow\n", list2.toString());
         list2.add(2, "white");
-        assertEquals("black\n, red\n, white\n, orange\n, yellow\n", list2.toString());
+        assertEquals("black\n, red\n, white\n, orange\n, yellow\n", list2
+            .toString());
         list2.add(5, "green");
         String temp;
         temp = "black\n, red\n, white\n, orange\n, yellow\n, green\n";
@@ -177,6 +184,9 @@ public class LinkedListTest extends student.TestCase{
         assertEquals(3, list2.size());
         assertTrue(list2.remove("orange"));
         assertEquals(2, list2.size());
+        list2.add("red");
+        list2.add("orange");
+        assertTrue(list2.remove("orange"));
     }
 
 
