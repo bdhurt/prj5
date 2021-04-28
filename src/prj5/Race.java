@@ -85,6 +85,9 @@ public class Race {
      * @return race object in String format
      */
     public String toString() {
+        /**
+         * Creates a string builder
+         */
         StringBuilder builder = new StringBuilder();
         builder.append("");
         builder.append(name + ": ");

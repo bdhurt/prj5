@@ -197,11 +197,14 @@ public class LinkedListTest extends student.TestCase {
         assertTrue(list1.remove(0));
         assertTrue(list1.isEmpty());
 
+        
         list2.add("green");
         assertTrue(list2.remove(3));
         assertEquals("red\n, orange\n, yellow\n", list2.toString());
         assertTrue(list2.remove(0));
         assertEquals("orange\n, yellow\n", list2.toString());
+        list2.add("brown");
+        assertTrue(list2.remove(1));
     }
 
 

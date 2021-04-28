@@ -275,7 +275,8 @@ public class LinkedList<E> {
                     size--;
                     return true;
                 }
-                if (currentIndex == index && this.size() > 1) {
+                if (currentIndex == index) { 
+            //        && this.size() > 1) {
                     head = head.next;
                     size--;
                     return true;
@@ -406,67 +407,5 @@ public class LinkedList<E> {
         return result;
     }
 
-    
-    /**
-     * Returns an array representation of the list If a list contains A, B, and
-     * C, the following should be returned {A, B, C}, If a list
-     * contains A, B, C, and C the following should be returned {A, B, C, C}
-     *
-     * @return an array representing the list
-     */
-    /*
-    public Object[] toArray() {
-
-        Object[] array = new Object[this.size()];
-
-        Node<E> current = head;
-        int count = 0;
-        while (current != null) {
-            array[count] = current.getData();
-            current = current.next;
-            count++;
-        }
-
-        return array;
-    }
-    */
-
-
-    /**
-     * Returns true if both lists have the exact same contents
-     * in the exact same order
-     *
-     * @return a boolean of whether two lists have the same contents,
-     *         item per item and in the same order
-     */
-    /*
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (this.getClass() == obj.getClass()) {
-            @SuppressWarnings("unchecked")
-            LinkedList<E> other = ((LinkedList<E>)obj);
-            if (other.size() == this.size()) {
-                Node<E> current = head;
-                Node<E> otherCurrent = other.head;
-                while (current != null) {
-                    if (!current.getData().equals(otherCurrent.getData())) {
-                        return false;
-                    }
-                    current = current.next();
-                    otherCurrent = otherCurrent.next();
-                }
-                return true;
-            }
-        }
-
-        return false;
-    }
-    */
 
 }
