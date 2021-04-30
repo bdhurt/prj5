@@ -103,7 +103,7 @@ public class GUIWindow {
     /**
      * Sorts alphabetically and redraws the bars when clicked
      */
-    private void clickedAlpha() {
+    public void clickedAlpha() {
 
     }
 
@@ -111,12 +111,12 @@ public class GUIWindow {
     /**
      * Sorts by CFR and redraws the bars when clicked
      */
-    private void clickedCFR() {
+    public void clickedCFR() {
 
     }
 
 
-    private void clickedQuit() {
+    public void clickedQuit(Button button) {
         System.exit(0);
     }
 
