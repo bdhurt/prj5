@@ -6,7 +6,7 @@ package prj5;
  * @author Benjamin Hurt benjaminhurt
  * @author Anthony Yermas ayermas
  * @author Jared Orendorff jaredo19
- * @version 04.23.2021
+ * @version 04/302021
  *
  * @param <E>
  *            object type
@@ -69,6 +69,7 @@ public class LinkedList<E> {
             return data;
         }
     }
+
     // first node in linked list
     private Node<E> head;
 
@@ -218,9 +219,6 @@ public class LinkedList<E> {
                 if (current.next.next != null) {
                     current.setNext(current.next.next);
                 }
-                if (current.next.next == null) {
-                    current.next = null;
-                }
                 size--;
                 return true;
             }
@@ -262,8 +260,8 @@ public class LinkedList<E> {
                     size--;
                     return true;
                 }
-                if (currentIndex == index) { 
-            //        && this.size() > 1) {
+                if (currentIndex == index) {
+                    // && this.size() > 1) {
                     head = head.next;
                     size--;
                     return true;
@@ -393,6 +391,5 @@ public class LinkedList<E> {
         }
         return result;
     }
-
 
 }

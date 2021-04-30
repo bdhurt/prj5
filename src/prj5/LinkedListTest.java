@@ -6,7 +6,7 @@ package prj5;
  * @author Benjamin Hurt benjaminhurt
  * @author Anthony Yermas ayermas
  * @author Jared Orendorff jaredo19
- * @version 04.23.2021
+ * @version 04/30/2021
  *
  */
 public class LinkedListTest extends student.TestCase {
@@ -197,7 +197,6 @@ public class LinkedListTest extends student.TestCase {
         assertTrue(list1.remove(0));
         assertTrue(list1.isEmpty());
 
-        
         list2.add("green");
         assertTrue(list2.remove(3));
         assertEquals("red\n, orange\n, yellow\n", list2.toString());

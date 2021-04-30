@@ -9,7 +9,7 @@ import java.io.IOException;
  * @author Benjamin Hurt benjaminhurt
  * @author Anthony Yermas ayermas
  * @author Jared Orendorff jaredo19
- * @version 04/16/2021
+ * @version 04/30/2021
  *
  */
 public class Input {
@@ -30,8 +30,7 @@ public class Input {
             runner = new FileReader(args[0]);
         }
         else {
-            runner = new FileReader(
-                "Cases_and_Deaths_by_race_CRDT_Sep2020.csv");
+            runner = new FileReader("Cases_and_Deaths_CRDT_NEW.csv");
         }
         LinkedList<State> states = runner.getStates();
         System.out.print(states.toString());

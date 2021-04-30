@@ -1,15 +1,17 @@
 package prj5;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
+
 /**
  * Reads the input file and creates the linked list
  * 
  * @author Benjamin Hurt benjaminhurt
  * @author Anthony Yermas ayermas
  * @author Jared Orendorff jaredo19
- * @version 04/16/2021
+ * @version 04/30/2021
  *
  */
 public class FileReader {
@@ -34,10 +36,13 @@ public class FileReader {
 
     /**
      * Reads the file and creates a linked list of states
-     * @param fileName name of the file being read
+     * 
+     * @param fileName
+     *            name of the file being read
      * @return LinkedList of states
      * @throws IOException
-     * @throws ParseException if the file is in the wrong format
+     * @throws ParseException
+     *             if the file is in the wrong format
      */
     public LinkedList<State> readFile(String fileName) throws IOException {
         // Scanner parses through file contents

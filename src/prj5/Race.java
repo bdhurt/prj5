@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @author Benjamin Hurt benjaminhurt
  * @author Anthony Yermas ayermas
  * @author Jared Orendorff jaredo19
- * @version 04.23.2021
+ * @version 04/30/2021
  *
  */
 public class Race {
