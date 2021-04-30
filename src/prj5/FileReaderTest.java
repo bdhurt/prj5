@@ -6,9 +6,9 @@ import java.io.IOException;
 /**
  * Tests the FileReader class
  * 
- * @author benjaminhurt
- * @author ayermas
- * @author jaredo19
+ * @author Benjamin Hurt benjaminhurt
+ * @author Anthony Yermas ayermas
+ * @author Jared Orendorff jaredo19
  * @version 04.23.2021
  *
  */
@@ -28,7 +28,10 @@ public class FileReaderTest extends student.TestCase {
     /**
      * Attempts to read the file
      * 
+     * @throws FileNotFoundException
+     *             if file not found
      * @throws IOException
+     *             if file formatted incorrectly
      */
     public void testReadFile() throws FileNotFoundException, IOException {
         assertNotNull(reader.readFile(

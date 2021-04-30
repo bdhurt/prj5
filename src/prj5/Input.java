@@ -6,9 +6,9 @@ import java.io.IOException;
 /**
  * Reads input
  * 
- * @author jared
- * @author benjaminhurt
- * @author Anthony Yermas
+ * @author Benjamin Hurt benjaminhurt
+ * @author Anthony Yermas ayermas
+ * @author Jared Orendorff jaredo19
  * @version 04/16/2021
  *
  */
@@ -19,7 +19,7 @@ public class Input {
      * 
      * @param args
      *            optional input values
-     * @throws ParseException
+     * @throws IOException
      * @throws FileNotFoundException
      */
     public static void main(String[] args)

@@ -5,9 +5,9 @@ import java.text.DecimalFormat;
 /**
  * Race class, contains information for a specific race's cases and deaths
  * 
- * @author benjaminhurt
- * @author ayermas
- * @author jaredo19
+ * @author Benjamin Hurt benjaminhurt
+ * @author Anthony Yermas ayermas
+ * @author Jared Orendorff jaredo19
  * @version 04.23.2021
  *
  */

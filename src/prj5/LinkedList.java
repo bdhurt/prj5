@@ -3,9 +3,9 @@ package prj5;
 /**
  * LinkedList class
  * 
- * @author benjaminhurt
- * @author ayermas
- * @author jaredo19
+ * @author Benjamin Hurt benjaminhurt
+ * @author Anthony Yermas ayermas
+ * @author Jared Orendorff jaredo19
  * @version 04.23.2021
  *
  * @param <E>
@@ -19,19 +19,6 @@ public class LinkedList<E> {
      *
      * @param <D>
      *            This is the type of object that this class will store
-     * @author Mark Wiggans (mmw125)
-     * @author Christina Olk (colk)
-     * @author maellis1
-     * @author Jamal Ahmad (jamal93)
-     * @author Margaret Ellis (maellis1)
-     * @author JW Lee (jiayiw6)
-     * 
-     * @version 4/14/2015
-     * @version 9.4.15
-     * @version 10.29.15
-     * @version 10/15/2016
-     * @version 03/17/2017
-     * @version 10/14/2019
      */
     public static class Node<D> {
 
@@ -82,7 +69,7 @@ public class LinkedList<E> {
             return data;
         }
     }
-
+    // first node in linked list
     private Node<E> head;
 
     // the size of the linked list
