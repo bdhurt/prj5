@@ -4,7 +4,7 @@ import cs2.Shape;
 import cs2.Window;
 import cs2.Button;
 import cs2.WindowSide;
-import doublylinkedlist.DLList.Node;
+import java.awt.Color;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -31,27 +31,27 @@ public class GUIWindow {
     /**
      * The bar representing the white population
      */
-    private Shape whiteBar;
+    private Shape barP1;
 
     /**
      * The bar representing the black population
      */
-    private Shape blackBar;
+    private Shape barP2;
 
     /**
      * The bar representing the Latinx population
      */
-    private Shape latinxBar;
+    private Shape barP3;
 
     /**
      * The bar representing the Asian population
      */
-    private Shape asianBar;
+    private Shape barP4;
 
     /**
      * The bar representing the other population
      */
-    private Shape otherBar;
+    private Shape barP5;
 
     /**
      * The constant width of our bars
@@ -77,89 +77,49 @@ public class GUIWindow {
      */
     public GUIWindow(LinkedList<State> windowList) {
         this.windowList = windowList;
-        
-        // iterates through our linked list
-        Iterator stateIter = windowList.iterator();
-        
+
         // creates a new window named COVID Visualization
         window = new Window("COVID Visualization");
-        
+
         // creates our white population bar
-        whiteBar = new Shape(BAR_X,BAR_Y,WIDTH,windowList.get)
+        barP1 = new Shape(BAR_X, BAR_Y, WIDTH, 0, Color.BLUE);
+        barP2 = new Shape(BAR_X, BAR_Y, WIDTH, 0, Color.BLUE);
+        barP3 = new Shape(BAR_X, BAR_Y, WIDTH, 0, Color.BLUE);
+        barP4 = new Shape(BAR_X, BAR_Y, WIDTH, 0, Color.BLUE);
+        barP5 = new Shape(BAR_X, BAR_Y, WIDTH, 0, Color.BLUE);
+        drawShapes(0);
+
+        
+        // creates our quit button
+        Button quitButton = new Button("Quit");
+
+        // tells our button what to do when it's clicked
+        quitButton.onClick(this, "clickedQuit");
+
+        // adds our Solve button to the top of the window
+        window.addButton(quitButton, WindowSide.NORTH);
+        
+        // creates our solve button
+        Button alphaButton = new Button("Sort by Alpha");
+
+        // tells our button what to do when it's clicked
+        alphaButton.onClick(this, "clickedAlpha");
+
+        // adds our Solve button to the top of the window
+        window.addButton(alphaButton, WindowSide.NORTH);
+        
+        // creates our solve button
+        Button cfrButton = new Button("Sort by CFR");
+
+        // tells our button what to do when it's clicked
+        cfrButton.onClick(this, "clickedCFR");
+
+        // adds our Solve button to the top of the window
+        window.addButton(cfrButton, WindowSide.NORTH);
+    }
+    
+    private void drawShapes(int listIndex) {
         
     }
-    
-    private class DLListIterator<A> implements Iterator<E> {
-        private Node<E> curr;
-        private boolean called;
 
-        /**
-         * Creates a new DLListIterator
-         */
-        public DLListIterator() {
-            curr = head;
-            called = false;
-        }
-
-
-        /**
-         * Checks if there are more elements in the list
-         *
-         * @return true if there are more elements in the list
-         */
-        @Override
-        public boolean hasNext() {
-            return curr.next.getData() != null;
-
-        }
-
-
-        /**
-         * Gets the next value in the list
-         *
-         * @return the next value
-         * @throws NoSuchElementException
-         *             if there are no nodes left in the list
-         */
-        @Override
-        public E next() {
-            if (hasNext()) {
-                called = true;
-                E data = curr.next.getData();
-                curr = curr.next();
-                return data;
-            }
-            else {
-                throw new NoSuchElementException(
-                    "There are no nodes left in the list");
-            }
-
-        }
-
-
-        /**
-         * Removes the last object returned with next() from the list
-         *
-         * @throws IllegalStateException
-         *             if next has not been called yet
-         *             and if the element has already been removed
-         */
-        @Override
-        public void remove() {
-            if (called) {
-                curr.previous.setNext(curr.next);
-                curr.next.setPrevious(curr.previous);
-                called = false;
-                size--;
-            }
-            else {
-                throw new IllegalStateException(
-                    "the element has already been removed "
-                        + "and/or next has not been called yet");
-            }
-
-        }
-    }
-    
-    
 }
