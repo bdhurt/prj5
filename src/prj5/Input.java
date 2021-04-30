@@ -35,5 +35,6 @@ public class Input {
         }
         LinkedList<State> states = runner.getStates();
         System.out.print(states.toString());
+        GUIWindow guiWindow = new GUIWindow(states);
     }
 }
