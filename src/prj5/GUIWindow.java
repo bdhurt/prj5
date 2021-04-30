@@ -4,7 +4,9 @@ import cs2.Shape;
 import cs2.Window;
 import cs2.Button;
 import cs2.WindowSide;
+import doublylinkedlist.DLList.Node;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Creates the window in which we view the COVID visualization
@@ -86,4 +88,78 @@ public class GUIWindow {
         whiteBar = new Shape(BAR_X,BAR_Y,WIDTH,windowList.get)
         
     }
+    
+    private class DLListIterator<A> implements Iterator<E> {
+        private Node<E> curr;
+        private boolean called;
+
+        /**
+         * Creates a new DLListIterator
+         */
+        public DLListIterator() {
+            curr = head;
+            called = false;
+        }
+
+
+        /**
+         * Checks if there are more elements in the list
+         *
+         * @return true if there are more elements in the list
+         */
+        @Override
+        public boolean hasNext() {
+            return curr.next.getData() != null;
+
+        }
+
+
+        /**
+         * Gets the next value in the list
+         *
+         * @return the next value
+         * @throws NoSuchElementException
+         *             if there are no nodes left in the list
+         */
+        @Override
+        public E next() {
+            if (hasNext()) {
+                called = true;
+                E data = curr.next.getData();
+                curr = curr.next();
+                return data;
+            }
+            else {
+                throw new NoSuchElementException(
+                    "There are no nodes left in the list");
+            }
+
+        }
+
+
+        /**
+         * Removes the last object returned with next() from the list
+         *
+         * @throws IllegalStateException
+         *             if next has not been called yet
+         *             and if the element has already been removed
+         */
+        @Override
+        public void remove() {
+            if (called) {
+                curr.previous.setNext(curr.next);
+                curr.next.setPrevious(curr.previous);
+                called = false;
+                size--;
+            }
+            else {
+                throw new IllegalStateException(
+                    "the element has already been removed "
+                        + "and/or next has not been called yet");
+            }
+
+        }
+    }
+    
+    
 }
